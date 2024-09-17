@@ -30,14 +30,14 @@ function App() {
       </S.PageContainer>
 
       {viewPage === 2 && (
-        <>
-          <S.PageImage ref={pageTwoRef} src={pageTwo} />
+        <div ref={pageTwoRef}>
+          <S.PageImage src={pageTwo} />
 
           <S.PageContainer>
             <S.PageImage src={pageThree} />
             <S.ButtonInImage isConfirmation onClick={onRedirectToSite} />
           </S.PageContainer>
-        </>
+        </div>
       )}
     </>
   );

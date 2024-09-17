@@ -1,4 +1,4 @@
-import invitation from './assets/invite-marriege.pdf'
+import invitation from '/invite-marriege.pdf'
 function App() {
 
   return (

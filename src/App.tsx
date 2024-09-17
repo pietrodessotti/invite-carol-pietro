@@ -19,7 +19,7 @@ function App() {
   }
 
   function onRedirectToSite() {
-    window.location.href = "https://google.com";
+    window.location.href = "https://www.pietroecaroline.com.br/";
   }
 
   return (

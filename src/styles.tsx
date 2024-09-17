@@ -14,18 +14,19 @@ export const ButtonInImage = styled.div<{isConfirmation?: boolean}>`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid red;
 
-    width: ${({ isConfirmation }) => isConfirmation ? '200px' : '90px'};
-    height: ${({ isConfirmation }) => isConfirmation ? '130px' : '50px'};
-    margin-left: 5px;
-    margin-top: ${({ isConfirmation }) => isConfirmation ? '80px' : '0px'};
+    width: ${({ isConfirmation }) => isConfirmation ? '150px' : '90px'};
+    height: ${({ isConfirmation }) => isConfirmation ? '100px' : '50px'};
+    margin-left: ${({ isConfirmation }) => isConfirmation ? '0px' : '5px'};
+    margin-top: ${({ isConfirmation }) => isConfirmation ? '50px' : '0px'};
 
     z-index: 2;
 
     @media (min-width: 768px) {
-        width: ${({ isConfirmation }) => isConfirmation ? '700px' : '420px'};
-        height: ${({ isConfirmation }) => isConfirmation ? '500px' : '220px'};
-        margin-left: 30px;
+        width: ${({ isConfirmation }) => isConfirmation ? '900px' : '420px'};
+        height: ${({ isConfirmation }) => isConfirmation ? '650px' : '220px'};
+        margin-left: ${({ isConfirmation }) => isConfirmation ? '-50px' : '30px'};
         margin-top: ${({ isConfirmation }) => isConfirmation ? '350px' : '10px'};
     }
 `;

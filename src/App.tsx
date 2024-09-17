@@ -1,23 +1,42 @@
-import { useState } from 'react';
-import { PageOne, PageOneContainer, PageOneContent, PageTwo } from './styles';
-import pageOne from '/invite-page1.jpg';
-import pageTwo from '/invite-page2.jpg';
+import { useState, useRef, useEffect } from "react";
+import * as S from "./styles";
+import pageOne from "/invite-page1.jpg";
+import pageTwo from "/invite-page2.jpg";
+import pageThree from "/invite-page3.jpg";
 
 function App() {
   const [viewPage, setViewPage] = useState(1);
+  const pageTwoRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (viewPage === 2 && pageTwoRef.current) {
+      pageTwoRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [viewPage]);
+
+  function scrollToPageTwo() {
+    setViewPage(2);
+  }
 
   return (
     <>
-    <PageOneContainer>
-      <PageOne src={pageOne} />
-      <PageOneContent onClick={() => setViewPage(2)}/>
-    </PageOneContainer>
+      <S.PageContainer>
+        <S.PageImage src={pageOne} />
+        <S.ButtonInImage onClick={scrollToPageTwo} />
+      </S.PageContainer>
 
-    {viewPage === 2 && (
-      <PageTwo src={pageTwo} />
-    )}
+      {viewPage === 2 && (
+        <>
+          <S.PageImage ref={pageTwoRef} src={pageTwo} />
+
+          <S.PageContainer>
+            <S.PageImage src={pageThree} />
+            <S.ButtonInImage isConfirmation onClick={scrollToPageTwo} />
+          </S.PageContainer>
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -4,9 +4,15 @@ export const PageContainer = styled.div`
     position: relative;
 `;
 
-export const PageImage = styled.img`
-    width: 100%;
-    height: 100%;
+export const PageImage = styled.img<{openInvite?: boolean}>`
+    width: ${({openInvite}) => openInvite ? '120px' : '100%'};
+    height: ${({openInvite}) => openInvite ? '120px' : '100%'};
+    top: ${({openInvite}) => openInvite ? '50%' : '0%'};
+    left: ${({openInvite}) => openInvite ? '50%' : '0%'};
+    transform:  ${({openInvite}) => openInvite ? 'translate(-50%, -50%)' : 'translate(0%, 0%)'};
+    rotate: ${({openInvite}) => openInvite ? '20deg' : '0deg'};
+
+    position: ${({ openInvite }) => openInvite ? 'absolute' : 'relative'};
 `;
 
 export const ButtonInImage = styled.div<{isConfirmation?: boolean}>`

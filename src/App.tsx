@@ -3,6 +3,7 @@ import * as S from "./styles";
 import pageOne from "/invite-page1.jpg";
 import pageTwo from "/invite-page2.jpg";
 import pageThree from "/invite-page3.jpg";
+import openInvite from "/open-invite.png";
 
 function App() {
   const [viewPage, setViewPage] = useState(1);
@@ -27,6 +28,8 @@ function App() {
       <S.PageContainer>
         <S.PageImage src={pageOne} />
         <S.ButtonInImage onClick={scrollToPageTwo} />
+
+        {viewPage === 2 && (<S.PageImage openInvite src={openInvite} />)}
       </S.PageContainer>
 
       {viewPage === 2 && (

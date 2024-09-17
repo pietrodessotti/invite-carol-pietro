@@ -18,6 +18,10 @@ function App() {
     setViewPage(2);
   }
 
+  function onRedirectToSite() {
+    window.location.href = "https://google.com";
+  }
+
   return (
     <>
       <S.PageContainer>
@@ -31,7 +35,7 @@ function App() {
 
           <S.PageContainer>
             <S.PageImage src={pageThree} />
-            <S.ButtonInImage isConfirmation onClick={scrollToPageTwo} />
+            <S.ButtonInImage isConfirmation onClick={onRedirectToSite} />
           </S.PageContainer>
         </>
       )}

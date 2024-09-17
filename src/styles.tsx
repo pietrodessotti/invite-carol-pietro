@@ -15,8 +15,6 @@ export const ButtonInImage = styled.div<{isConfirmation?: boolean}>`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    border: 2px solid red;
-
     width: ${({ isConfirmation }) => isConfirmation ? '200px' : '90px'};
     height: ${({ isConfirmation }) => isConfirmation ? '130px' : '50px'};
     margin-left: 5px;

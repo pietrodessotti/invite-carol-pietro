@@ -1,15 +1,21 @@
-import invitation from '/invite-marriege.pdf'
+import { useState } from 'react';
+import { PageOne, PageOneContainer, PageOneContent, PageTwo } from './styles';
+import pageOne from '/invite-page1.jpg';
+import pageTwo from '/invite-page2.jpg';
+
 function App() {
+  const [viewPage, setViewPage] = useState(1);
 
   return (
     <>
-    'invitation' is a pdf file that is imported in the src folder
-    <iframe style={{
-      width: '100vw',
-      height: '100vh',
-      margin: '-10px',
-    }} src={invitation}></iframe>
-    
+    <PageOneContainer>
+      <PageOne src={pageOne} />
+      <PageOneContent onClick={() => setViewPage(2)}/>
+    </PageOneContainer>
+
+    {viewPage === 2 && (
+      <PageTwo src={pageTwo} />
+    )}
     </>
   )
 }
